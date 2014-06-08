@@ -9,6 +9,11 @@ import org.apache.commons.beanutils.PropertyUtils;
 
 public abstract class AbstractValueObject implements IValueObject {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@SuppressWarnings("rawtypes")
 	@Override
 	public String toString() {

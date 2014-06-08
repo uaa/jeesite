@@ -148,6 +148,7 @@ public class LoginController extends BaseController{
 			}
 			outputStream.flush();
 			outputStream.close();
+			inputStream.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

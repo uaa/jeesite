@@ -75,7 +75,7 @@ public class BlankUtil {
 	 * @param obj
 	 * @return
 	 */
-	public static boolean isBlank(final Collection obj) {
+	public static boolean isBlank(final Collection<?> obj) {
 		return (obj == null) || (obj.size() <= 0);
 	}
 
@@ -87,7 +87,7 @@ public class BlankUtil {
 	 * @param obj
 	 * @return
 	 */
-	public static boolean isBlank(final Set obj) {
+	public static boolean isBlank(final Set<?> obj) {
 		return (obj == null) || (obj.size() <= 0);
 	}
 
@@ -111,7 +111,7 @@ public class BlankUtil {
 	 * @param obj
 	 * @return
 	 */
-	public static boolean isBlank(final Map obj) {
+	public static boolean isBlank(final Map<?,?> obj) {
 		return (obj == null) || (obj.size() <= 0);
 	}
 

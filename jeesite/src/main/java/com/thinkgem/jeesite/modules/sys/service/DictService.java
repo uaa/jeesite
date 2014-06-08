@@ -36,7 +36,6 @@ public class DictService extends BaseService {
 	private DictDao dictDao;
 	
 	@Autowired
-	@SuppressWarnings("unused")
 	private MyBatisDictDao myBatisDictDao;
 	
 	public Dict get(String id) {

@@ -9,7 +9,7 @@ public class MyPage {
 	private int	  page=1;
 	private int   records;
 	private int	  total;
-	private List 	rows;
+	private List<?> 	rows;
 	
 	public MyPage(){
 		
@@ -38,10 +38,10 @@ public class MyPage {
 	public void setTotal(int total) {
 		this.total = total;
 	}
-	public List getRows() {
+	public List<?> getRows() {
 		return rows;
 	}
-	public void setRows(List rows) {
+	public void setRows(List<?> rows) {
 		this.rows = rows;
 	}
 	
