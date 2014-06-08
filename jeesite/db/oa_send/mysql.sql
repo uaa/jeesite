@@ -50,4 +50,4 @@ create table oa_send_file
 /*==============================================================*/
 /* Table: oa_red_template                                       */
 /*==============================================================*/
-create table oa_red_template;
+/*create table oa_red_template;*/
