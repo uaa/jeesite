@@ -267,12 +267,29 @@ public class BaseDao<T> {
 	}
 	
 	/**
+	 * 保存实体
+	 * @param entity
+	 */
+	public void saveT(T entity) {
+		getSession().save(entity);
+	}
+	
+	/**
 	 * 更新实体
 	 * @param entity
 	 */
-	public void update(T entity) {
-		getSession().saveOrUpdate(entity);
+	public void updateT(T entity) {
+		getSession().update(entity);
 	}
+	
+	/**
+	 * 删除实体
+	 * @param entity
+	 */
+	public void deleteT(T entity) {
+		getSession().delete(entity);
+	}
+	
 	
 	/**
 	 * 保存实体列表
