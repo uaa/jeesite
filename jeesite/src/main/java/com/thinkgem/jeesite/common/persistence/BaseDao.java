@@ -267,6 +267,16 @@ public class BaseDao<T> {
 	}
 	
 	/**
+	 * 根据主键找出实体类
+	 * @param id
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public T findTById(Serializable id) {
+		return (T)getSession().get(entityClass, id);
+	}
+	
+	/**
 	 * 保存实体
 	 * @param entity
 	 */
