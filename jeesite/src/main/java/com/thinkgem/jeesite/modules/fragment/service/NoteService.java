@@ -27,7 +27,7 @@ public class NoteService extends BaseService {
 			note.setCreateDate(new Date());
 			User user = UserUtils.getUser();
 			note.setUser(user);
-			
+			noteDao.save(note);
 		}
 	}
 	
