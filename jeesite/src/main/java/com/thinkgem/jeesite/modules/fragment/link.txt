@@ -1,0 +1,5 @@
+查:http://localhost:8181/jeesite/a/fragment/notepaper/listPage?title=%E5%96%8A%E9%86%92
+改:http://localhost:8181/jeesite/a/fragment/notepaper/update?id=3&title=%E6%88%91%E7%88%B1
+查:http://localhost:8181/jeesite/a/fragment/notepaper/note?id=3
+删:http://localhost:8181/jeesite/a/fragment/notepaper/delete?id=2
+增:http://localhost:8181/jeesite/a/fragment/notepaper/create?title=哇哈哈&content=哇哈哈

@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.thinkgem.jeesite.common.persistence.BaseDomainEntity;
 import com.thinkgem.jeesite.modules.sys.entity.User;
 
@@ -32,6 +33,7 @@ public class Note extends BaseDomainEntity<Integer>{
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
+	@JsonIgnore
 	private User user;
 	
 	@Column(name = "send_time")
@@ -40,6 +42,7 @@ public class Note extends BaseDomainEntity<Integer>{
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "parent_id")
+	@JsonIgnore
 	private Note parent;
 
 	public String getTitle() {

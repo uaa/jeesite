@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thinkgem.jeesite.common.ResultObject;
+import com.thinkgem.jeesite.common.persistence.MyPage;
+import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.web.BaseController;
 import com.thinkgem.jeesite.modules.fragment.entity.Note;
 import com.thinkgem.jeesite.modules.fragment.service.NoteService;
@@ -35,18 +37,46 @@ public class NotePaperController extends BaseController {
 		return ro;
 	}
 	
-	@RequestMapping(value="update")
+	@RequestMapping(value="/update")
 	@ResponseBody
-	public String update(Note note) {
-		
-		return "";
+	public ResultObject updateNote(Note note) {
+		noteService.updateNote(note);
+		ResultObject ro = new ResultObject();
+		ro.setSuccess(true);
+		return ro;
 	}
 	
-	@RequestMapping(value="delete")
+	@RequestMapping(value="/delete")
 	@ResponseBody
-	public String delete(Note note) {
-		
-		return "";
+	public ResultObject deleteNote(Note note) {
+		noteService.deleteNote(note);
+		ResultObject ro = new ResultObject();
+		ro.setSuccess(true);
+		return ro;
 	}
+	
+	@RequestMapping(value="/listPage")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@ResponseBody
+	public MyPage findNotes(MyPage myPage, Note note) {
+		MyPage p = new MyPage();
+		Page page = new Page();
+		page.setPageNo(myPage.getPage());
+		page.setPageSize(myPage.getPageSize());
+		page = noteService.findPageNotes(page, note);
+		p.setRows(page.getList());
+		p.setPage(page.getPageNo());
+		p.setPageSize(page.getPageSize());
+		p.setTotal(page.getTotalPage());
+		p.setRecords((int)page.getCount());
+		return p;
+	}
+	
+	@RequestMapping(value="/note")
+	@ResponseBody
+	public Note findNote(Note n) {
+		return noteService.findNote(n);
+	}
+	
 	
 }
