@@ -24,10 +24,10 @@ public class NoteService extends BaseService {
 	@Transactional(readOnly=false)
 	public void saveNote(Note note) {
 		if(!BlankUtil.isBlank(note)) {
-			note.setCreateDate(new Date());
+			note.setSendTime(new Date());
 			User user = UserUtils.getUser();
 			note.setUser(user);
-			noteDao.save(note);
+			noteDao.saveT(note);
 		}
 	}
 	

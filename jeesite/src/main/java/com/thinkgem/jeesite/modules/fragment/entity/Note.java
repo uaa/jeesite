@@ -11,14 +11,20 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.thinkgem.jeesite.common.persistence.IdEntity;
+import com.thinkgem.jeesite.common.persistence.BaseDomainEntity;
 import com.thinkgem.jeesite.modules.sys.entity.User;
 
 @Entity
 @Table(name = "note")
-public class Note extends IdEntity<Note> {
+public class Note extends BaseDomainEntity<Integer>{
+	//IdEntity<Note> {
+	
+	/*@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;*/
 
 	private static final long serialVersionUID = 1L;
+	
 	@Column
 	private String title;
 	@Column
@@ -75,5 +81,4 @@ public class Note extends IdEntity<Note> {
 	public void setParent(Note parent) {
 		this.parent = parent;
 	}
-
 }
